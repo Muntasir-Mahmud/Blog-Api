@@ -12,7 +12,7 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
         # Write permissions are only allowed to the author of a post
         return obj.author == request.user
 
-        '''
+'''
          We do not need else here.
 
          else:
@@ -23,4 +23,4 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
         ei function e jekono request er jonno return obj.author == request.user
         check kora hobe.....tobe jodi request get type hoy tahole always TRUE hobe
 
-        '''
+'''

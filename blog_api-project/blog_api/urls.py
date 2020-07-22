@@ -7,4 +7,5 @@ urlpatterns = [
     #Here add v1 is a good practice, which means version:1
     path('api-auth/',include('rest_framework.urls')),
     #This url is for the auth of the api 
+    path('api/v1/rest-auth/',include('rest_auth.urls')),
 ]

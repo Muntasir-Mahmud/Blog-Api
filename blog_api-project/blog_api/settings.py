@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     #3rd Party apps
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -39,22 +40,6 @@ INSTALLED_APPS = [
     #local apps
     'posts.apps.PostsConfig',
 ]
-
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES':[
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES':[
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication', 
-    ],
-     'DEFAULT_SCHEMA_CLASS': 
-         'rest_framework.schemas.coreapi.AutoSchema' 
-    
-}
-
 
 
 
@@ -139,6 +124,26 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication', 
+    ],
+     'DEFAULT_SCHEMA_CLASS': 
+         'rest_framework.schemas.coreapi.AutoSchema'    
+}
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 
 SITE_ID = 1 
+
+
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'rest_framework:login',
+    'LOGOUT_URL': 'rest_framework:logout',
+}
+
